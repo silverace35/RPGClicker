@@ -17,8 +17,7 @@ public class Enemie : MonoBehaviour, Damageable
     [SerializeField]
     private string enemieName;
 
-    [SerializeField]
-    private int health;
+    public float health;
 
     [SerializeField]
     private int speed;
@@ -35,11 +34,11 @@ public class Enemie : MonoBehaviour, Damageable
     [SerializeField]
     public Collider collider;
 
-    public int Health { get => health; set => health = value; }
+    public float Health { get => health; set => health = value; }
     public int Speed { get => speed; set => speed = value; }
     public GameManager GameManager { set => gameManager = value; }
 
-    public void getHit(int value)
+    public void getHit(float value)
     {
         if (!deathFlag)
         {
@@ -51,7 +50,7 @@ public class Enemie : MonoBehaviour, Damageable
         }
     }
 
-    public void hitEnemie(Damageable damageable, int value)
+    public void hitEnemie(Damageable damageable, float value)
     {
         damageable.getHit(value);
     }

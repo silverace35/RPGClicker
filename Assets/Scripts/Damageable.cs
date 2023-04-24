@@ -4,9 +4,9 @@ using UnityEngine;
 
 public interface Damageable
 {
-    public int Health { get; set; }
+    public float Health { get; set; }
 
-    public void hitEnemie(Damageable damageable, int value);
-    public void getHit(int value);
+    public void hitEnemie(Damageable damageable, float value);
+    public void getHit(float value);
     public void mort();
 }

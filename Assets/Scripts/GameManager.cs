@@ -22,13 +22,10 @@ public class GameManager : MonoBehaviour
     public int radius;
 
     [SerializeField]
-    private Transform spawnPoint;
-
-    [SerializeField]
     private Transform map;
 
     [SerializeField]
-    private List<GameObject> enemiesList;
+    public List<GameObject> enemiesList;
 
     [SerializeField]
     private string playerName;
@@ -50,11 +47,7 @@ public class GameManager : MonoBehaviour
 
     private void spawnEnemie()
     {
-        System.Random random = new System.Random();
-        GameObject enemie = Instantiate(enemiesList[random.Next(0, enemiesList.Count)], this.spawnPoint);
-        enemie.GetComponent<Enemie>().GameManager = this;
-        enemie.transform.LookAt(this.player.transform);
-        this.currentEnemie = enemie.GetComponent<Enemie>();
+        this.spawnManager.spawnMonster();
     }
 
     public void OnEnemieDeath()

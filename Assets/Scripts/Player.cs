@@ -7,9 +7,7 @@ public class Player : MonoBehaviour , Damageable
     [SerializeField]
     private string playerName;
     [SerializeField]
-    private int health;
-    [SerializeField]
-    private int playerPA;
+    private float health;
     [SerializeField]
     private int playerSpeed;
     [SerializeField]
@@ -17,17 +15,16 @@ public class Player : MonoBehaviour , Damageable
 
 
     public string PlayerName { get => playerName; set => playerName = value; }
-    public int PlayerPA { get => playerPA; set => playerPA = value; }
     public int PlayerSpeed { get => playerSpeed; set => playerSpeed = value; }
-    public int Health { get => health; set => health = value; }
+    public float Health { get => health; set => health = value; }
     public int Strenght { get => strenght; set => strenght = value; }
 
-    public void getHit(int value)
+    public void getHit(float value)
     {
         this.health -= value;
     }
 
-    public void hitEnemie(Damageable damageable, int value)
+    public void hitEnemie(Damageable damageable, float value)
     {
         damageable.getHit(value);
     }

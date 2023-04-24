@@ -50,7 +50,7 @@ MonoBehaviour:
       m_Calls: []
   isRigged: 0
   enemieName: Default enemie
-  health: 300
+  health: 120
   speed: 50
   enemieHead: {fileID: 7920445987995421195}
   prefabText: {fileID: 4719307437295474160, guid: 2fd9ca36187272c40a60ebc9dfb089c4, type: 3}
