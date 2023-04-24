@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     public Enemie currentEnemie;
 
     [SerializeField]
+    private EnemieUI enemieUI;
+
+    [SerializeField]
     private GameObject sparks;
 
     [SerializeField]
@@ -48,6 +51,7 @@ public class GameManager : MonoBehaviour
     private void spawnEnemie()
     {
         this.spawnManager.spawnMonster();
+        this.enemieUI.setNewEnemie(this.currentEnemie);
     }
 
     public void OnEnemieDeath()

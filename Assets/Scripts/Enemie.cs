@@ -15,7 +15,7 @@ public class Enemie : MonoBehaviour, Damageable
     private bool isRigged;
 
     [SerializeField]
-    private string enemieName;
+    public string enemieName;
 
     public float health;
 
