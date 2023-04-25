@@ -32,7 +32,7 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         this.currentWave = 0;
-        this.currentMonster = 0;
+        this.currentMonster = 1;
     }
 
     // Update is called once per frame
@@ -46,14 +46,19 @@ public class SpawnManager : MonoBehaviour
         this.monsterCount++;
         this.currentMonster++;
 
-        if (this.currentMonster == this.waveMonsters[this.currentWave])
+        
+
+        if (this.currentMonster > this.waveMonsters[this.currentWave])
         {
-            this.currentMonster = 0;
+            this.currentMonster = 1;
             this.currentWave++;
+            Debug.Log("Nouvelle vague");
         }
 
         if (this.waveMonsters.Count == this.currentWave)
         {
+            this.currentWave = 0;
+            Debug.Log("Ascention");
             foreach (Transform child in this.spawnPoint.transform)
             {
                 Destroy(child.gameObject, 3f);
@@ -67,6 +72,5 @@ public class SpawnManager : MonoBehaviour
         gameManager.currentEnemie = enemie.GetComponent<Enemie>();
         //Set enemie health
         enemie.GetComponent<Enemie>().health = enemie.GetComponent<Enemie>().health * Mathf.Pow(scaleValue, monsterCount);
-
     }
 }

@@ -63,7 +63,7 @@ public class Enemie : MonoBehaviour, Damageable
 
     private void Update()
     {
-        if (health <= 0)
+        if (health <= 1f)
         {
             this.mort();
         }
