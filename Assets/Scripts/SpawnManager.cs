@@ -73,4 +73,9 @@ public class SpawnManager : MonoBehaviour
         //Set enemie health
         enemie.GetComponent<Enemie>().health = enemie.GetComponent<Enemie>().health * Mathf.Pow(scaleValue, monsterCount);
     }
+
+    public float getRatio()
+    {
+        return Mathf.Pow(scaleValue, monsterCount);
+    }
 }

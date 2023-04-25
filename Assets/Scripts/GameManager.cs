@@ -33,6 +33,11 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private string playerName;
 
+    [SerializeField]
+    private float initialMoneyGain;
+
+    [SerializeField]
+    private float initialXpGain;
 
     public string PlayerName { get => playerName; set => playerName = value; }
 
@@ -56,11 +61,18 @@ public class GameManager : MonoBehaviour
 
     public void OnEnemieDeath()
     {
+        float ratio = this.spawnManager.getRatio();
+        float money = this.initialMoneyGain * ratio;
+        float xp = this.initialXpGain * ratio;
+
+        this.player.grantReward(money, xp);
         spawnEnemie();
     }
 
     private void Update()
     {
+        this.currentEnemie.getHit(this.player.Strenght);
+
         //probably in the player ?
         if (Input.GetMouseButtonDown(0))
         {

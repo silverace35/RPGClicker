@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Player : MonoBehaviour , Damageable 
@@ -12,7 +13,12 @@ public class Player : MonoBehaviour , Damageable
     private int playerSpeed;
     [SerializeField]
     private int strenght;
-
+    [SerializeField]
+    private int money;
+    [SerializeField]
+    private XpBarre xpBarre;
+    [SerializeField]
+    private TextMeshProUGUI moneyText;
 
     public string PlayerName { get => playerName; set => playerName = value; }
     public int PlayerSpeed { get => playerSpeed; set => playerSpeed = value; }
@@ -29,6 +35,11 @@ public class Player : MonoBehaviour , Damageable
         damageable.getHit(value);
     }
 
+    private void Start()
+    {
+        this.moneyText.text = "Money : " + this.money;
+    }
+
     private void Update()
     {
         if (health <= 0)
@@ -40,5 +51,12 @@ public class Player : MonoBehaviour , Damageable
     public void mort()
     {
         Destroy(gameObject);
+    }
+
+    public void grantReward(float money, float xp)
+    {
+        this.money += (int)money;
+        this.moneyText.text = "Money : " + this.money;
+        this.xpBarre.grantXp(xp);
     }
 }

@@ -21,6 +21,9 @@ public class EnemieUI : MonoBehaviour
     [SerializeField]
     Slider enemieHpSlider;
 
+    [SerializeField]
+    GameObject sliderBar;
+
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +44,7 @@ public class EnemieUI : MonoBehaviour
     }
     public void setNewEnemie(Enemie enemie)
     {
+        this.sliderBar.SetActive(true);
         this.currentEnemie = enemie;
         this.enemieMaxHpText.text = ((int)enemie.health).ToString();
         this.enemieNameText.text = enemie.enemieName.ToString();
@@ -51,6 +55,10 @@ public class EnemieUI : MonoBehaviour
 
     private void updateEnemieHp()
     {
+        if(this.currentEnemie.health < 1)
+        {
+            this.sliderBar.SetActive(false);
+        }
         this.enemieCurrentHpText.text = ((int)this.currentEnemie.health).ToString();
         this.enemieHpSlider.value = (int)this.currentEnemie.health;
     }
