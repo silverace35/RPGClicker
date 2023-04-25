@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     public Enemie currentEnemie;
 
     [SerializeField]
+    bool cheat;
+
+    [SerializeField]
     private EnemieUI enemieUI;
 
     [SerializeField]
@@ -71,7 +74,10 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        this.currentEnemie.getHit(this.player.Strenght);
+        if (this.cheat)
+        {
+            this.currentEnemie.getHit(this.player.Strenght);
+        }
 
         //probably in the player ?
         if (Input.GetMouseButtonDown(0))
