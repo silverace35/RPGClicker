@@ -98,6 +98,7 @@ public class GameManager : MonoBehaviour
                     }
                 }
 
+
                 if (hit.collider.gameObject.GetComponent<Rigidbody>() != null)
                 {
                     if (getParentOfChild(hit.collider.gameObject.transform) == this.currentEnemie)
@@ -125,7 +126,7 @@ public class GameManager : MonoBehaviour
 
         if (enemie == null)
         {
-            getParentOfChild(parent);
+            enemie = getParentOfChild(parent);
         }
         return enemie;
     }
