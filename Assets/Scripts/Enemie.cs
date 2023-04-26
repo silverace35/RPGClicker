@@ -41,7 +41,7 @@ public class Enemie : MonoBehaviour, Damageable
     public int Speed { get => speed; set => speed = value; }
     public GameManager GameManager { set => gameManager = value; }
 
-    public void getHit(float value)
+    public void getHit(Damageable hiter,  float value)
     {
         if (!deathFlag)
         {
@@ -55,7 +55,7 @@ public class Enemie : MonoBehaviour, Damageable
 
     public void hitEnemie(Damageable damageable, float value)
     {
-        damageable.getHit(value);
+        damageable.getHit(this, value);
     }
 
     private void Start()

@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
     {
         if (this.cheat)
         {
-            this.currentEnemie.getHit(this.player.Strenght);
+            this.currentEnemie.getHit(this.player, this.player.Strenght);
         }
 
         //probably in the player ?
@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour
                     {
                         if (getParentOfChild(hit.collider.gameObject.transform) == this.currentEnemie)
                         {
-                            this.currentEnemie.getHit(this.player.Strenght);
+                            this.currentEnemie.getHit(this.player, this.player.Strenght);
                             hitSpark(hit.point);
                         }
                     }
@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour
                 {
                     if (getParentOfChild(hit.collider.gameObject.transform) == this.currentEnemie)
                     {
-                        this.currentEnemie.getHit(this.player.Strenght);
+                        this.currentEnemie.getHit(this.player, this.player.Strenght);
                         hitSpark(hit.point);
                     }
                     Rigidbody rb = hit.collider.gameObject.GetComponent<Rigidbody>();

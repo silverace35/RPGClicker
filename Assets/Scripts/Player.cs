@@ -29,14 +29,14 @@ public class Player : MonoBehaviour , Damageable
     public float Health { get => health; set => health = value; }
     public int Strenght { get => strenght; set => strenght = value; }
 
-    public void getHit(float value)
+    public void getHit(Damageable hiter, float value)
     {
         this.health -= value;
     }
 
     public void hitEnemie(Damageable damageable, float value)
     {
-        damageable.getHit(value);
+        damageable.getHit(this, value);
     }
 
     private void Start()
