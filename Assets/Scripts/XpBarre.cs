@@ -39,6 +39,9 @@ public class XpBarre : MonoBehaviour
     [SerializeField]
     private float xpScale;
 
+    [SerializeField]
+    public RectTransform xpRectTransform;
+
 
     // Start is called before the first frame update
     void Start()

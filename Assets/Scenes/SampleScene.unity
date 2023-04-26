@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,42 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &22158609
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 22158610}
+  m_Layer: 0
+  m_Name: moneyTextPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &22158610
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22158609}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.045438, y: 0.045438, z: 0.045438}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1006121448}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 16.5, y: 35.6}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &24953975
 GameObject:
   m_ObjectHideFlags: 0
@@ -1027,6 +1063,7 @@ RectTransform:
   - {fileID: 201816924}
   - {fileID: 1022773677}
   - {fileID: 2065542163}
+  - {fileID: 1001138957}
   m_Father: {fileID: 1930516781}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1627,7 +1664,7 @@ MonoBehaviour:
   - {fileID: 6082946008080330975, guid: 864adc548b1ba0b4c83de4c53ac0f118, type: 3}
   - {fileID: 8252658403188780822, guid: f159b36f2759bef4b9af1414d1f1d627, type: 3}
   playerName: Hero
-  initialMoneyGain: 10
+  initialMoneyGain: 20
   initialXpGain: 10
 --- !u!4 &901137955 stripped
 Transform:
@@ -1795,6 +1832,42 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4518872999756412, guid: e5009fa0653ddec49a445103c0596109, type: 3}
   m_PrefabInstance: {fileID: 7985910336023335549}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1001138956
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1001138957}
+  m_Layer: 0
+  m_Name: xpTextePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1001138957
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001138956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.045406, y: 0.045406, z: 0.045406}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 443296758}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 66.7, y: 16}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1006121447
 GameObject:
   m_ObjectHideFlags: 0
@@ -1824,7 +1897,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 22158610}
   m_Father: {fileID: 59974602}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2141,7 +2215,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1052296069}
   m_LocalRotation: {x: -0, y: 0.22557847, z: -0, w: 0.97422504}
-  m_LocalPosition: {x: -3.93, y: 0.6601374, z: 2.45}
+  m_LocalPosition: {x: -3.93, y: 0.49, z: 2.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3393,6 +3467,7 @@ MonoBehaviour:
   xpMax: 0
   level: 0
   xpScale: 1.5
+  xpRectTransform: {fileID: 1001138957}
 --- !u!4 &1943718234 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4285604591239906, guid: e7a579807cf88aa4587da8f125b48974, type: 3}
@@ -3610,13 +3685,21 @@ PrefabInstance:
       propertyPath: moneyText
       value: 
       objectReference: {fileID: 1006121449}
+    - target: {fileID: 3946855308015659400, guid: 8b8ab547a7ce7a349a98227ca2433f4f, type: 3}
+      propertyPath: textPrefab
+      value: 
+      objectReference: {fileID: 4795123895957349331, guid: 62ddcf726b6ba77459a2e282f586396a, type: 3}
+    - target: {fileID: 3946855308015659400, guid: 8b8ab547a7ce7a349a98227ca2433f4f, type: 3}
+      propertyPath: addMoneyTextPos
+      value: 
+      objectReference: {fileID: 22158610}
     - target: {fileID: 3946855308546213329, guid: 8b8ab547a7ce7a349a98227ca2433f4f, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3946855308546213329, guid: 8b8ab547a7ce7a349a98227ca2433f4f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.657
+      value: 1.98
       objectReference: {fileID: 0}
     - target: {fileID: 3946855308546213329, guid: 8b8ab547a7ce7a349a98227ca2433f4f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3624,7 +3707,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3946855308546213329, guid: 8b8ab547a7ce7a349a98227ca2433f4f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.04
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 3946855308546213329, guid: 8b8ab547a7ce7a349a98227ca2433f4f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6773,11 +6856,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4246016748776520, guid: f5f94dd8b4d56f4458d4511cca4fafce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.95
+      value: -25.64
       objectReference: {fileID: 0}
     - target: {fileID: 4246016748776520, guid: f5f94dd8b4d56f4458d4511cca4fafce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.76
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 4246016748776520, guid: f5f94dd8b4d56f4458d4511cca4fafce, type: 3}
       propertyPath: m_LocalPosition.z

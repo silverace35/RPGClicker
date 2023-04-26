@@ -49,13 +49,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isRigged: 0
-  enemieName: Default enemie
+  enemieName: XAE-12-CUB3
   health: 120
   speed: 50
   enemieHead: {fileID: 7920445987995421195}
   prefabText: {fileID: 4719307437295474160, guid: 2fd9ca36187272c40a60ebc9dfb089c4, type: 3}
   tempsMort: 0.6
   collider: {fileID: 7920445986665914474}
+  animator: {fileID: 2725751862684744870}
 --- !u!1 &7920445986665914475
 GameObject:
   m_ObjectHideFlags: 0
@@ -68,6 +69,7 @@ GameObject:
   - component: {fileID: 7920445986665914476}
   - component: {fileID: 7920445986665914477}
   - component: {fileID: 7920445986665914474}
+  - component: {fileID: 2725751862684744870}
   m_Layer: 0
   m_Name: DefaultEnemie
   m_TagString: Untagged
@@ -154,6 +156,27 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &2725751862684744870
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7920445986665914475}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2fbc3234e8f3c21489904f4778030ffb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7920445987995421192
 GameObject:
   m_ObjectHideFlags: 0

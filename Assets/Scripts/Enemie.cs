@@ -34,6 +34,9 @@ public class Enemie : MonoBehaviour, Damageable
     [SerializeField]
     public Collider collider;
 
+    [SerializeField]
+    private Animator animator;
+
     public float Health { get => health; set => health = value; }
     public int Speed { get => speed; set => speed = value; }
     public GameManager GameManager { set => gameManager = value; }
@@ -90,6 +93,11 @@ public class Enemie : MonoBehaviour, Damageable
             this.collider.gameObject.AddComponent<Rigidbody>();
             this.collider.gameObject.GetComponent<Rigidbody>().mass = 20f;
         }
+        if (this.animator != null)
+        {
+            this.animator.enabled = false;
+        }
+        
         yield return new WaitForSeconds(tempsMort);
         onEnemieDeath?.Invoke();
         //Destroy(this.gameObject);
