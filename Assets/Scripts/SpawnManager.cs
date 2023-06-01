@@ -20,13 +20,12 @@ public class SpawnManager : MonoBehaviour
     private float currentScale;
 
     [SerializeField]
-    private float scaleValue;
-
-    [SerializeField]
     private List<int> waveMonsters;
 
     [SerializeField]
     private Transform spawnPoint;
+
+    public AnimationCurve hpScale;
 
     // Start is called before the first frame update
     void Start()
@@ -71,11 +70,11 @@ public class SpawnManager : MonoBehaviour
         enemie.transform.LookAt(gameManager.player.transform);
         gameManager.currentEnemie = enemie.GetComponent<Enemie>();
         //Set enemie health
-        enemie.GetComponent<Enemie>().health = enemie.GetComponent<Enemie>().health * Mathf.Pow(scaleValue, monsterCount);
+        enemie.GetComponent<Enemie>().health = this.hpScale.Evaluate(this.monsterCount);
     }
 
-    public float getRatio()
+    public int getMonsterCount()
     {
-        return Mathf.Pow(scaleValue, monsterCount);
+        return this.monsterCount;
     }
 }

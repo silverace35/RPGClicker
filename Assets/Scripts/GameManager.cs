@@ -44,6 +44,10 @@ public class GameManager : MonoBehaviour
 
     public string PlayerName { get => playerName; set => playerName = value; }
 
+    public AnimationCurve xpEarnScale;
+
+    public AnimationCurve moneyEarnScale;
+
     public void initializePlayer()
     {
         player.PlayerName = this.playerName;
@@ -64,9 +68,8 @@ public class GameManager : MonoBehaviour
 
     public void OnEnemieDeath()
     {
-        float ratio = this.spawnManager.getRatio();
-        float money = this.initialMoneyGain * ratio;
-        float xp = this.initialXpGain * ratio;
+        float money = this.moneyEarnScale.Evaluate(this.spawnManager.getMonsterCount());
+        float xp = this.xpEarnScale.Evaluate(this.spawnManager.getMonsterCount());
 
         this.player.grantReward(money, xp);
         spawnEnemie();

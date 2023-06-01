@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1665,8 +1665,56 @@ MonoBehaviour:
   - {fileID: 6082946008080330975, guid: 864adc548b1ba0b4c83de4c53ac0f118, type: 3}
   - {fileID: 8252658403188780822, guid: f159b36f2759bef4b9af1414d1f1d627, type: 3}
   playerName: Hero
-  initialMoneyGain: 20
+  initialMoneyGain: 25
   initialXpGain: 10
+  xpEarnScale:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 20
+      inSlope: 6.2316885
+      outSlope: 6.2316885
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.06850595
+    - serializedVersion: 3
+      time: 10020.487
+      value: 100235.805
+      inSlope: 3.4165323
+      outSlope: 3.4165323
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13776737
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  moneyEarnScale:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 10
+      inSlope: 9.686989
+      outSlope: 9.686989
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.24465558
+    - serializedVersion: 3
+      time: 9653.1045
+      value: 972209.06
+      inSlope: 281.7203
+      outSlope: 281.7203
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.040380098
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &901137955 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4129695469482894, guid: 3145edabccbd88f41a3c7d56060ef655, type: 3}
@@ -1731,9 +1779,41 @@ MonoBehaviour:
   currentMonster: 0
   currentWave: 0
   currentScale: 0
-  scaleValue: 1.05
   waveMonsters: f401000002000000
   spawnPoint: {fileID: 1052296070}
+  hpScale:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 100
+      inSlope: 27.300562
+      outSlope: 27.300562
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.38071984
+    - serializedVersion: 3
+      time: 100.310745
+      value: 11036.976
+      inSlope: 174.07951
+      outSlope: 174.07951
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.78547597
+      outWeight: 0.0068489355
+    - serializedVersion: 3
+      time: 10000
+      value: 10000000
+      inSlope: 1795.8162
+      outSlope: 1795.8162
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.10291143
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &948684684 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4447262273550368, guid: 58ec8aaca45a85148964d3d01a86fb64, type: 3}
