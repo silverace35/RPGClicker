@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class XpBarre : MonoBehaviour
@@ -42,10 +43,13 @@ public class XpBarre : MonoBehaviour
     [SerializeField]
     public RectTransform xpRectTransform;
 
+    public UnityEvent onPlayerLevelUp;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        this.onPlayerLevelUp.AddListener(this.player.onPlayerLevelUp);
         this.level = 0;
         this.levelUp();
         this.xp = 0;
@@ -95,5 +99,12 @@ public class XpBarre : MonoBehaviour
         this.playerRequiredXpText.text = ((int)this.xpMax).ToString();
         this.playerXpSlider.value = this.xp;
         this.playerXpSlider.maxValue = this.xpMax;
+        this.onPlayerLevelUp?.Invoke();
+        //TODO mettre le levelup au niveau du gameManager
+    }
+
+    public int getLevel()
+    {
+        return this.level;
     }
 }

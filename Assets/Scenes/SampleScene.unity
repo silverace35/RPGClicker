@@ -3547,7 +3547,7 @@ MonoBehaviour:
   xp: 0
   xpMax: 0
   level: 0
-  xpScale: 1.5
+  xpScale: 1.35
   xpRectTransform: {fileID: 1001138957}
 --- !u!4 &1943718234 stripped
 Transform:

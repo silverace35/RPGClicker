@@ -24,6 +24,8 @@ public class Player : MonoBehaviour , Damageable
 
     public GameObject textPrefab;
 
+    public AnimationCurve strenghtScale;
+
     public string PlayerName { get => playerName; set => playerName = value; }
     public int PlayerSpeed { get => playerSpeed; set => playerSpeed = value; }
     public float Health { get => health; set => health = value; }
@@ -70,5 +72,10 @@ public class Player : MonoBehaviour , Damageable
         this.money += (int)money;
         this.moneyText.text = "Money : " + this.money;
         this.xpBarre.grantXp(xp);
+    }
+
+    public void onPlayerLevelUp()
+    {
+        this.strenght = (int)strenghtScale.Evaluate(this.xpBarre.getLevel());
     }
 }
