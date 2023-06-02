@@ -26,6 +26,8 @@ public class Player : MonoBehaviour , Damageable
 
     public AnimationCurve strenghtScale;
 
+    public WeaponData weaponData;
+
     public string PlayerName { get => playerName; set => playerName = value; }
     public int PlayerSpeed { get => playerSpeed; set => playerSpeed = value; }
     public float Health { get => health; set => health = value; }
