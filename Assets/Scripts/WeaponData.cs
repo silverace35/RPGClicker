@@ -11,7 +11,7 @@ public class WeaponData : ScriptableObject
     public Image icon;
     public GameObject prefab;
     public EStat temporaryEstat;
-    public float value;
+    public float coef;
     //public Dictionary<EStat, float> statsAffected;
     //TODO find a way to use dictionnary OR stat class in unity editor
     

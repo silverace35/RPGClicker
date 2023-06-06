@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9d7fdb8e8f30284598f4d670f0d1428, type: 3}
-  m_Name: WeaponData
+  m_Name: DaggerData
   m_EditorClassIdentifier: 
   name: dagger
   icon: {fileID: 0}
   prefab: {fileID: 2097682823213926182, guid: cd3393ad855704a43a155b6436bbe9a9, type: 3}
   temporaryEstat: 1
-  value: 1.1
+  coef: 1.1

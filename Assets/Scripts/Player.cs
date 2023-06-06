@@ -28,6 +28,10 @@ public class Player : MonoBehaviour , Damageable
 
     public WeaponData weaponData;
 
+    public GameObject rightHand;
+
+    public GameObject leftHand;
+
     public string PlayerName { get => playerName; set => playerName = value; }
     public int PlayerSpeed { get => playerSpeed; set => playerSpeed = value; }
     public float Health { get => health; set => health = value; }

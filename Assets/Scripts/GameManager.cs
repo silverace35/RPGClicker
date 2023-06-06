@@ -136,6 +136,6 @@ public class GameManager : MonoBehaviour
 
     private float getPlayerDamage()
     {
-        return this.player.Strenght * this.player.weaponData.value;
+        return this.player.Strenght * this.player.weaponData.coef;
     }
 }
