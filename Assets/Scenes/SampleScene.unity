@@ -590,7 +590,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerName: 
   health: 100
-  playerSpeed: 100
+  playerSpeed: 0
   strenght: 25
   money: 0
   xpBarre: {fileID: 1930516782}
