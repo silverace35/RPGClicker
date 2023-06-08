@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -11,8 +12,6 @@ public class Player : MonoBehaviour , Damageable
     private float health;
     [SerializeField]
     private int playerSpeed;
-    [SerializeField]
-    private int strenght;
     [SerializeField]
     private int money;
     [SerializeField]
@@ -32,10 +31,33 @@ public class Player : MonoBehaviour , Damageable
 
     public GameObject leftHand;
 
+    [SerializeField]
+    private Stat[] stats;
+
     public string PlayerName { get => playerName; set => playerName = value; }
     public int PlayerSpeed { get => playerSpeed; set => playerSpeed = value; }
     public float Health { get => health; set => health = value; }
-    public int Strenght { get => strenght; set => strenght = value; }
+
+
+    private void Awake()
+    {
+        this.setStatValue(EStat.STRENGHT, this.strenghtScale.Evaluate(this.xpBarre.getLevel()));
+    }
+
+    private void Start()
+    {
+        this.moneyText.text = "Money : " + this.money;
+        this.setStatValue(EStat.STRENGHT_COEF, this.weaponData.coef);
+    }
+
+    private void Update()
+    {
+        //Old code
+        if (health <= 0)
+        {
+            this.mort();
+        }
+    }
 
     public void getHit(Damageable hiter, float value)
     {
@@ -45,19 +67,6 @@ public class Player : MonoBehaviour , Damageable
     public void hitEnemie(Damageable damageable, float value)
     {
         damageable.getHit(this, value);
-    }
-
-    private void Start()
-    {
-        this.moneyText.text = "Money : " + this.money;
-    }
-
-    private void Update()
-    {
-        if (health <= 0)
-        {
-            this.mort();
-        }
     }
 
     public void mort()
@@ -82,6 +91,15 @@ public class Player : MonoBehaviour , Damageable
 
     public void onPlayerLevelUp()
     {
-        this.strenght = (int)strenghtScale.Evaluate(this.xpBarre.getLevel());
+        this.stats[(int)EStat.STRENGHT].value = (int)strenghtScale.Evaluate(this.xpBarre.getLevel());
+    }
+
+    public float getStatValue(EStat enumStat) {
+        return this.stats[(int)enumStat].value;
+    }
+
+    public void setStatValue(EStat enumStat, float value)
+    {
+        this.stats[(int)enumStat].value = value;
     }
 }

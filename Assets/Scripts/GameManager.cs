@@ -106,7 +106,7 @@ public class GameManager : MonoBehaviour
                 {
                     if (getParentOfChild(hit.collider.gameObject.transform) == this.currentEnemie)
                     {
-                        this.currentEnemie.getHit(this.player, this.player.Strenght);
+                        this.currentEnemie.getHit(this.player, this.getPlayerDamage());
                         hitSpark(hit.point);
                     }
                     Rigidbody rb = hit.collider.gameObject.GetComponent<Rigidbody>();
@@ -136,6 +136,6 @@ public class GameManager : MonoBehaviour
 
     private float getPlayerDamage()
     {
-        return this.player.Strenght * this.player.weaponData.coef;
+        return this.player.getStatValue(EStat.STRENGHT) * this.player.getStatValue(EStat.STRENGHT_COEF);
     }
 }
