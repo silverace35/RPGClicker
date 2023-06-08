@@ -591,7 +591,6 @@ MonoBehaviour:
   playerName: 
   health: 100
   playerSpeed: 0
-  strenght: 25
   money: 0
   xpBarre: {fileID: 1930516782}
   moneyText: {fileID: 1006121449}
@@ -624,6 +623,11 @@ MonoBehaviour:
   weaponData: {fileID: 11400000, guid: 3ecba1c23249b99409d8158984a017cc, type: 2}
   rightHand: {fileID: 1697223385}
   leftHand: {fileID: 1873404862}
+  stats:
+  - enumStat: 0
+    value: 0
+  - enumStat: 1
+    value: 0
 --- !u!4 &163129563 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4129695469482894, guid: 3145edabccbd88f41a3c7d56060ef655, type: 3}
